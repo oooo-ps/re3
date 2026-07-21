@@ -1,15 +1,16 @@
 [submodule "vendor/ogg"]
 	path = vendor/ogg
-	url = https://github.com/xiph/ogg.git
+	url = rad:z2Ybo1Y1VeheComTmgfgvUxGAK4w7
 	branch = master
 [submodule "vendor/opus"]
 	path = vendor/opus
-	url = https://github.com/xiph/opus.git
+	url = rad:zGTpR9DgLoAvozGvnhzh6mjbfEMV
 	branch = master
 [submodule "vendor/opusfile"]
 	path = vendor/opusfile
-	url = https://github.com/xiph/opusfile.git
+	url = rad:z41jC2rJQAS8DCbaqWYbTYc9E51nj
 	branch = master
 [submodule "vendor/librw"]
 	path = vendor/librw
-	url = https://github.com/robante15/librw.git
+	url = rad:zEyA25B3hAZBPC5nB99eXAEXzaJL
+	branch = master
