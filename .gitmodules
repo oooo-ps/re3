@@ -1,22 +1,22 @@
 [submodule "vendor/ogg"]
 	path = vendor/ogg
-	url = rad:z2Ybo1Y1VeheComTmgfgvUxGAK4w7
+	url = rad://z2Ybo1Y1VeheComTmgfgvUxGAK4w7
 	branch = master
 [submodule "vendor/opus"]
 	path = vendor/opus
-	url = rad:zGTpR9DgLoAvozGvnhzh6mjbfEMV
+	url = rad://zGTpR9DgLoAvozGvnhzh6mjbfEMV
 	branch = master
 [submodule "vendor/opusfile"]
 	path = vendor/opusfile
-	url = rad:z41jC2rJQAS8DCbaqWYbTYc9E51nj
+	url = rad://z41jC2rJQAS8DCbaqWYbTYc9E51nj
 	branch = master
 [submodule "vendor/librw"]
 	path = vendor/librw
-	url = rad:zEyA25B3hAZBPC5nB99eXAEXzaJL
+	url = rad://zEyA25B3hAZBPC5nB99eXAEXzaJL
 	branch = master
 [submodule "vendor/libctru"]
 	path = vendor/libctru
-	url = rad:z38nFzh8ktvK7EintVf2p8ihTFuRb
+	url = rad://z38nFzh8ktvK7EintVf2p8ihTFuRb
 [submodule "vendor/citro3d"]
 	path = vendor/citro3d
-	url = rad:z4ZohDzdCx9GQrigGQxJCR5YAvcpK
+	url = rad://z4ZohDzdCx9GQrigGQxJCR5YAvcpK
