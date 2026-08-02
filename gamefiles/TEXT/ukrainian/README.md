@@ -4,14 +4,14 @@
 
 Install [gxter](https://github.com/oooo-ps/gxter/tree/vc-uk-andrulko) (includes [ASCII dictionary](https://github.com/oooo-ps/gxter/blob/vc-uk-andrulko/character_tables/vc_uk_andrulko.toml) for [@Andrulko's Ukrainian localization](https://kuli.com.ua/grand-theft-auto-vice-city#translations))
 
-### Decompile from GXT
+### Decompile
 
 ``` bash
-gxter-cli -d ukrainian.gxt -c gxter/character_tables/vc_uk_andrulko.toml -o ukrainian.toml
+gxter-cli -d ukrainian.gxt -c character_tables/vc_uk_andrulko.toml -o gxter/andrulko.toml
 ```
 
-### Compile to GXT
+### Compile
 
 ``` bash
-gxter-cli ukrainian.toml -c gxter/character_tables/vc_uk_andrulko.toml -o ukrainian.gxt
+gxter-cli gxter/andrulko.toml -c character_tables/vc_uk_andrulko.toml -o ukrainian.gxt
 ```
