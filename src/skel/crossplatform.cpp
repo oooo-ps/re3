@@ -69,22 +69,19 @@ bool FindNextFile(HANDLE d, WIN32_FIND_DATA* finddata) {
 	static struct stat fileStats;
 	static char path[PATH_MAX], relativepath[NAME_MAX + sizeof(finddata->folder) + 1];
 	int extensionLen = strlen(finddata->extension);
-	while ((file = readdir((DIR*)d)) != NULL) {
-		return true;
-		// TODO: Fis this code, or put inside of ifndef
-		// We only want "DT_REG"ular Files, but reportedly some FS and OSes gives DT_UNKNOWN as type.
-		/*if ((file->d_type == DT_UNKNOWN || file->d_type == DT_REG || file->d_type == DT_LNK) &&
-			(extensionLen == 0 || strncasecmp(&file->d_name[strlen(file->d_name) - extensionLen], finddata->extension, extensionLen) == 0)) {
+    while ((file = readdir((DIR*)d)) != NULL) {
+        if ((file->d_type == DT_UNKNOWN || file->d_type == DT_REG || file->d_type == DT_LNK) &&
+            (extensionLen == 0 || strncasecmp(&file->d_name[strlen(file->d_name) - extensionLen], finddata->extension, extensionLen) == 0)) {
 
-			sprintf(relativepath, "%s/%s", finddata->folder, file->d_name);
-			realpath(relativepath, path);
-			stat(path, &fileStats);
-			strncpy(finddata->cFileName, file->d_name, sizeof(finddata->cFileName));
-			finddata->ftLastWriteTime = fileStats.st_mtime;
-			return true;
-		}*/
-	}
-	return false;
+            sprintf(relativepath, "%s/%s", finddata->folder, file->d_name);
+            realpath(relativepath, path);
+            stat(path, &fileStats);
+            strncpy(finddata->cFileName, file->d_name, sizeof(finddata->cFileName));
+            finddata->ftLastWriteTime = fileStats.st_mtime;
+            return true;
+        }
+    }
+    return false;
 }
 
 void GetDateFormat(int unused1, int unused2, SYSTEMTIME* in, int unused3, char* out, int size) {
@@ -100,8 +97,25 @@ void GetDateFormat(int unused1, int unused2, SYSTEMTIME* in, int unused3, char* 
 }
 
 void FileTimeToSystemTime(time_t* writeTime, SYSTEMTIME* out) {
-	tm *ptm = gmtime(writeTime);
-	tmToSystemTime(ptm, out);
+    if (!out) return;
+    if (!writeTime) {
+        memset(out, 0, sizeof(*out));
+        return;
+    }
+
+#if defined(_POSIX_THREADS) || defined(__linux__) || defined(__APPLE__)
+    struct tm tmbuf;
+    struct tm* ptm = gmtime_r(writeTime, &tmbuf);
+#else
+    struct tm* ptm = gmtime(writeTime);
+#endif
+
+    if (!ptm) {
+        memset(out, 0, sizeof(*out));
+        return;
+    }
+
+    tmToSystemTime(ptm, out);
 }
 #endif
 
