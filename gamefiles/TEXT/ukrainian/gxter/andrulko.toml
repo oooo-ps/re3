@@ -2451,6 +2451,61 @@ WRONGCD = "Нeпpaвильний диcк. Будь лacкa, вcтaвтe диcк 
 YANKEE = "Tanкee"
 ZEBRA = 'Zebra\Cab'
 
+# re3 only patch : begin
+
+"FEC_360" = "XBOX 360 CONTROLLER"
+"FEC_DS2" = "DUALSHOCK 2"
+"FEC_DS3" = "DUALSHOCK 3"
+"FEC_DS4" = "DUALSHOCK 4"
+"FEC_IVP" = "INVERT PAD VERTICALLY"
+"FEC_JDE" = "Detected joystick"
+"FEC_JOD" = "DETECT JOYSTICK"
+"FEC_JPR" = "Press any key on the joystick of your choice that you want to use on the game, and it will be selected."
+"FEC_NSW" = "NINTENDO SWITCH CONTROLLER"
+"FEC_ONE" = "XBOX ONE CONTROLLER"
+"FEC_TYP" = "GAMEPAD TYPE"
+
+"FED_AAS" = "ANTI ALIASING"
+"FED_BIL" = "BILINEAR"
+"FED_FIL" = "TEXTURE FILTERING"
+"FED_FLS" = "FULLSCREEN"
+"FED_MBL" = "MOTION BLUR"
+"FED_MFX" = "MATFX"
+"FED_MIP" = "MIP MAPPING"
+"FED_NEO" = "NEO"
+"FED_RGL" = "ROAD GLOSS"
+"FED_TRL" = "TRILINEAR"
+"FED_VPL" = "VEHICLE PIPELINE"
+
+"FEL_JAP" = "JAPANESE"
+"FEL_POL" = "POLISH"
+"FEL_RUS" = "RUSSIAN"
+
+"FEM_2PR" = "PS2 ALPHA TEST"
+"FEM_AUT" = "AUTO"
+"FEM_CAR" = "CAR DENSITY"
+"FEM_CSB" = "CUTSCENE BORDERS"
+"FEM_HIG" = "HIGH"
+"FEM_ISL" = "MAP MEMORY USAGE"
+"FEM_LOW" = "LOW"
+"FEM_MED" = "MEDIUM"
+"FEM_MOB" = "MOBILE"
+"FEM_NON" = "NONE"
+"FEM_NRM" = "NORMAL"
+"FEM_PED" = "PED DENSITY"
+"FEM_PS2" = "PS2"
+"FEM_SCF" = "SCREEN FORMAT"
+"FEM_SIM" = "SIMPLE"
+"FEM_XBX" = "XBOX"
+
+"FET_AGS" = "GAMEPAD SETTINGS"
+"FET_GFX" = "GRAPHICS SETUP"
+"FET_RMS" = "REPLAY MISSION"
+
+"FESZ_RM" = "RETRY?"
+
+# re3 only patch : end
+
 [aux_tables.AMBULAE]
 ALEVEL = "МEДПPAЦIВНИК, PIВEНЬ ~1~"
 ATUTOR2 = "~g~OБEPEЖНO вiдвeзи пaцiєнтiв дo лiкapнi. Кoжнe зiткнeння змeншує їxнi шaнcи нa виживaння."
