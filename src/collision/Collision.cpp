@@ -478,14 +478,15 @@ CCollision::TestSphereTriangle(const CColSphere &sphere,
 		else if(insideBC) dist = (sphere.center - va).Magnitude();
 		else assert(0);
 		break;
-	case 2:
+	case 2: {
 		// closest to an edge
 		// looks like original game as DistToLine manually inlined
-		if(!insideAB) dist = DistToLine(&va, &vb, &CVECTORHACK(sphere.center));
-		else if(!insideAC) dist = DistToLine(&va, &vc, &CVECTORHACK(sphere.center));
-		else if(!insideBC) dist = DistToLine(&vb, &vc, &CVECTORHACK(sphere.center));
+		CVector sphereCenter = CVECTORHACK(sphere.center);
+		if(!insideAB) dist = DistToLine(&va, &vb, &sphereCenter);
+		else if(!insideAC) dist = DistToLine(&va, &vc, &sphereCenter);
+		else if(!insideBC) dist = DistToLine(&vb, &vc, &sphereCenter);
 		else assert(0);
-		break;
+		break; }
 	case 3:
 		// center is in triangle
 		dist = Abs(planedist);
@@ -1296,14 +1297,15 @@ CCollision::ProcessSphereTriangle(const CColSphere &sphere,
 		else assert(0);
 		dist = (sphere.center - p).Magnitude();
 		break;
-	case 2:
+	case 2: {
 		// closest to an edge
 		// looks like original game as DistToLine manually inlined
-		if(!insideAB) dist = DistToLine(&va, &vb, &CVECTORHACK(sphere.center), p);
-		else if(!insideAC) dist = DistToLine(&va, &vc, &CVECTORHACK(sphere.center), p);
-		else if(!insideBC) dist = DistToLine(&vb, &vc, &CVECTORHACK(sphere.center), p);
+		CVector sphereCenter = CVECTORHACK(sphere.center);
+		if(!insideAB) dist = DistToLine(&va, &vb, &sphereCenter, p);
+		else if(!insideAC) dist = DistToLine(&va, &vc, &sphereCenter, p);
+		else if(!insideBC) dist = DistToLine(&vb, &vc, &sphereCenter, p);
 		else assert(0);
-		break;
+		break; }
 	case 3:
 		// center is in triangle
 		dist = Abs(planedist);

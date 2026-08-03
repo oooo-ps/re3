@@ -76,10 +76,6 @@ workspace "reLCS"
 	symbols "Full"
 	staticruntime "off"
 
-	-- for CVECTORHACK
-	configuration { "gmake*" }
-		buildoptions { "-fpermissive" }
-
 	filter { "platforms:macosx*" }
 		buildoptions { "-Wno-address-of-temporary" }
 
