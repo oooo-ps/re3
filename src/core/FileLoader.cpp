@@ -97,7 +97,8 @@ CFileLoader::LoadLevel(const char *filename)
 			if(!objectsLoaded){
 				LoadingScreenLoadingFile("Collision");
 				PUSH_MEMID(MEMID_WORLD);
-				CObjectData::Initialise("DATA\\OBJECT.DAT");
+				//CObjectData::Initialise("DATA\\OBJECT.DAT");
+				CObjectData::Initialise("VCBMP\\DATA\\OBJECT.DAT");
 				CStreaming::Init();
 				POP_MEMID();
 				PUSH_MEMID(MEMID_COLLISION);

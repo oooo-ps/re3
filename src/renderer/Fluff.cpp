@@ -1227,7 +1227,8 @@ void CScriptPath::Clear(void) {
 
 void CScriptPath::InitialiseOne(int32 numNodes, float length) {
 	char Dest[32];
-	sprintf(Dest, "data\\paths\\spath%d.dat", numNodes);
+	//sprintf(Dest, "data\\paths\\spath%d.dat", numNodes);
+	sprintf(Dest, "VCBMP\\data\\paths\\spath%d.dat", numNodes);
 	m_pNode = CPlane::LoadPath(Dest, m_numNodes, m_fTotalLength, false);
 	m_fSpeed = 1.0f;
 	m_fPosition = 0.0f;
