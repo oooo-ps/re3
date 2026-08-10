@@ -454,9 +454,11 @@ bool CGame::Initialise(const char* datFile)
 	CTheCarGenerators::Init();
 
 	CdStreamAddImage("MODELS\\GTA3.IMG");
+	CdStreamAddImage("VCBMP\\models\\vcbmp.img");
 
 	CFileLoader::LoadLevel("DATA\\DEFAULT.DAT");
 	CFileLoader::LoadLevel(datFile);
+	CFileLoader::LoadLevel("VCBMP\\data\\gta_vc.dat");
 
 	LoadingScreen("Loading the Game", "Add Particles", nil);
 	CWorld::AddParticles();
