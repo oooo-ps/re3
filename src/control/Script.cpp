@@ -731,7 +731,7 @@ int CTheScripts::OpenScript()
 {
 	CFileMgr::ChangeDir("\\");
 	switch (ScriptToLoad) {
-	case 0: return CFileMgr::OpenFile("data\\main.scm", "rb");
+	case 0: return CFileMgr::OpenFile("VCBMP\\data\\main.scm", "rb");
 	case 1: return CFileMgr::OpenFile("data\\freeroam_miami.scm", "rb");
 	case 2: return CFileMgr::OpenFile("data\\main_d.scm", "rb");
 	}
