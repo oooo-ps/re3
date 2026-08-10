@@ -119,6 +119,7 @@ CModelInfo::ShutDown(void)
 CSimpleModelInfo*
 CModelInfo::AddSimpleModel(int id)
 {
+	assert(id <= MODELINFOSIZE);
 	CSimpleModelInfo *modelinfo;
 	modelinfo = CModelInfo::ms_simpleModelStore.Alloc();
 	CModelInfo::ms_modelInfoPtrs[id] = modelinfo;
@@ -129,6 +130,7 @@ CModelInfo::AddSimpleModel(int id)
 CTimeModelInfo*
 CModelInfo::AddTimeModel(int id)
 {
+	assert(id <= MODELINFOSIZE);
 	CTimeModelInfo *modelinfo;
 	modelinfo = CModelInfo::ms_timeModelStore.Alloc();
 	CModelInfo::ms_modelInfoPtrs[id] = modelinfo;
@@ -139,6 +141,7 @@ CModelInfo::AddTimeModel(int id)
 CWeaponModelInfo*
 CModelInfo::AddWeaponModel(int id)
 {
+	assert(id <= MODELINFOSIZE);
 	CWeaponModelInfo *modelinfo;
 	modelinfo = CModelInfo::ms_weaponModelStore.Alloc();
 	CModelInfo::ms_modelInfoPtrs[id] = modelinfo;
@@ -149,6 +152,7 @@ CModelInfo::AddWeaponModel(int id)
 CClumpModelInfo*
 CModelInfo::AddClumpModel(int id)
 {
+	assert(id <= MODELINFOSIZE);
 	CClumpModelInfo *modelinfo;
 	modelinfo = CModelInfo::ms_clumpModelStore.Alloc();
 	CModelInfo::ms_modelInfoPtrs[id] = modelinfo;
@@ -159,6 +163,7 @@ CModelInfo::AddClumpModel(int id)
 CPedModelInfo*
 CModelInfo::AddPedModel(int id)
 {
+	assert(id <= MODELINFOSIZE);
 	CPedModelInfo *modelinfo;
 	modelinfo = CModelInfo::ms_pedModelStore.Alloc();
 	CModelInfo::ms_modelInfoPtrs[id] = modelinfo;
@@ -169,6 +174,7 @@ CModelInfo::AddPedModel(int id)
 CVehicleModelInfo*
 CModelInfo::AddVehicleModel(int id)
 {
+	assert(id <= MODELINFOSIZE);
 	CVehicleModelInfo *modelinfo;
 	modelinfo = CModelInfo::ms_vehicleModelStore.Alloc();
 	CModelInfo::ms_modelInfoPtrs[id] = modelinfo;
