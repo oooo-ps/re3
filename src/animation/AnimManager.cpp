@@ -1052,6 +1052,7 @@ CAnimManager::GetAnimationBlockIndex(const char *name)
 int32
 CAnimManager::RegisterAnimBlock(const char *name)
 {
+	assert(ms_numAnimBlocks < NUMANIMBLOCKS);
 	CAnimBlock *animBlock = GetAnimationBlock(name);
 	if(animBlock == nil){
 		animBlock = &ms_aAnimBlocks[ms_numAnimBlocks++];
@@ -1071,18 +1072,21 @@ CAnimManager::GetNumRefsToAnimBlock(int32 block)
 void
 CAnimManager::AddAnimBlockRef(int32 block)
 {
+	assert(block >= 0 && block < NUMANIMBLOCKS);
 	ms_aAnimBlocks[block].refCount++;
 }
 
 void
 CAnimManager::RemoveAnimBlockRefWithoutDelete(int32 block)
 {
+	assert(block >= 0 && block < NUMANIMBLOCKS);
 	ms_aAnimBlocks[block].refCount--;
 }
 
 void
 CAnimManager::RemoveAnimBlockRef(int32 block)
 {
+	assert(block > 0 && block < NUMANIMBLOCKS);
 	ms_aAnimBlocks[block].refCount--;
 	if(ms_aAnimBlocks[block].refCount == 0)
 		CStreaming::RemoveAnim(block);
@@ -1301,6 +1305,7 @@ CAnimManager::LoadAnimFile(RwStream *stream, bool compress, char (*uncompressedA
 			animBlock->firstIndex = ms_numAnimations;
 		}
 	}else{
+		assert(ms_numAnimBlocks < NUMANIMBLOCKS);
 		animBlock = &ms_aAnimBlocks[ms_numAnimBlocks++];
 		strncpy(animBlock->name, buf+4, MAX_ANIMBLOCK_NAME);
 		animBlock->numAnims = *(int*)buf;
